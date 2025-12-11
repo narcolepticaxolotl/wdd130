@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICE Portal Page</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <!-- <style>/*body {background-image: url("images/Portal_page_wireframe.png");}*/ img {width:60px;}</style> -->
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="../images/Heroes_II_Green_Dragon.webp" alt="Logo image"></a>
+        <div id="cool-images"></div>
+        <nav>
+            <a href="wwr/index.html">WWR</a>
+            <a href="ice.html">ICE</a>
+            <a href="aboutme.html">About Me</a>
+        </nav>
+    </header>
+    <main>
+        <div id="previews-box">
+            <section id="preview-selection" class="double-column">
+              <!-- pass -->
+            </section>
+            <section id="preview-window">
+                <!-- Implementing code based on https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp and modifications inspired by chatgpt -->
+                <iframe id="preview-frame" src="wwr/index.html"></iframe>
+                <!-- <img src="images/HoMM2_Prerelease_TownscreenComp.webp" alt="preview image"> -->
+            </section>
+            <table>
+                <tr>
+                    <th>Page title</th>
+                    <th>Date last updated</th>
+                    <th>Rating</th>
+                </tr>
+                <tr id="page_info">
+                    <td>Whitewater Rafting Homepage</td>
+                    <td>2025-10-11</td>
+                    <td>5 stars</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <aside>
+            <img src="../images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="../images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="../images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="../images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="../images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="../images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="../images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="../images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="../images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+        </aside>
+    </main>
+    <footer>
+        &copy; 2025
+    </footer>
+
+<script> // Code by chatgpt and edited by me. vvv
+  const pages = [
+  "ice/apostle_spotlight/apostle_spotlight/apostles.html",
+  "ice/favorite_devo/favdevo.html",
+  "ice/gallery/gallery.html",
+  "ice/grid_flags/flags.html",
+  "ice/halloween/index.html",
+  "ice/positioning/positioning.html",
+  "ice/prophet_cards/nelson.html",
+  "ice/signup/signup.html",
+];
+
+const container = document.getElementById('preview-selection');
+
+async function makeButtons() {
+  for (const href of pages) {
+    try {
+      const res = await fetch(href);
+      const text = await res.text();
+      const titleMatch = text.match(/<title>(.*?)<\/title>/i);
+      const title = titleMatch ? titleMatch[1] : "(no title)";
+      const a = document.createElement("a");
+      a.href = href;
+      a.target = "_blank";
+      a.textContent = title;
+      // a.class = 'destination'; //I was just gonna do this if I was displaying the buttons as a flex sequence and use the "order" property, but I decided to go with a grid and so I think I won't need this.
+      container.appendChild(a);
+      // container.appendChild(document.createElement("br"));
+    }
+    catch (err) {
+      console.log("Failed to load", href, err);
+      const span = document.createElement("span");
+      span.textContent = `Failed: ${href}`;
+      container.appendChild(span);
+      // container.appendChild(document.createElement("br"));
+    }
+  }
+}
+
+async function makePreviewButtons() {
+  for (const href of pages) {
+    try {
+      const res = await fetch(href);
+      const text = await res.text();
+      const titleMatch = text.match(/<title>(.*?)<\/title>/i);
+      const title = titleMatch ? titleMatch[1] : "(no title)";
+      const button = document.createElement("button");
+      button.onclick = () => showPreview(href, title, 'unknown', 'Not Rated');
+      button.textContent = 'Preview';
+      // button.class = 'ice-buttons'; // Doesn't appear to do anything. >:(
+      container.appendChild(button);
+      // container.appendChild(document.createElement("br"));
+    }
+    catch (err) {
+      console.log("Failed to load", href, err);
+      const span = document.createElement("span");
+      span.textContent = `Preview button failed: ${href}`;
+      container.appendChild(span);
+      // container.appendChild(document.createElement("br"));
+    }
+  }
+}
+
+//<button onclick="showPreview('wwr/index.html', 'Whitewater Rafting Homepage', '2025-10-11', '5 stars')" class="active">WWR</button><br>
+
+// this section was written by chatgpt and tweaked by me.
+function showPreview(url, title, date, rating) {
+  // Update iframe source
+  const frame = document.getElementById('preview-frame');
+  frame.src = url;
+
+  // Update info table
+  const infoTable = document.getElementById('page_info');
+  infoTable.innerHTML = `
+    <tr>
+      <td>${title}</td>
+      <td>${date}</td>
+      <td>${rating}</td>
+    </tr>
+  `;
+
+  // Highlight active button
+  const buttons = document.querySelectorAll('.sidebar button');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+
+makeButtons(); 
+makePreviewButtons(); 
+</script>
+
+
+
+
+</body>
+</html>

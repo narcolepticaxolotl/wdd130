@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostles Spotlights</title>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        main {
+            width: 900px;
+            height: 750px;
+            margin: 0 auto;
+            background: url("images/christus.webp");
+            border: 10px solid #000;
+            border-radius: 30px;
+            color: #e8eced;
+            text-align: center;
+            background-size: cover;
+        }
+        img {
+        width: 100px;}
+        #president {width: 150px;
+            border: 8px solid #e8eced;
+            border-radius: 50%;
+            margin: 0 40px}
+        .counselors {width: 120px;
+            border: 8px solid #e8eced;
+            border-radius: 50%;}
+
+
+        #quorum-grid {
+            width: 600px;
+            display: grid;
+            place-items: center;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: center;
+            grid-gap: 30px;
+            margin: 0 auto;
+        }
+        .spotlight {
+            width: 100px;
+            height: 100px;
+            border: 8px solid #e8eced;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>First Presidency</h1>
+        <div id="presidency-row">
+            <img src="images/oaks.webp" class="counselors">
+            <img src="images/nelson.webp" id="president">
+            <img src="images/eyring.webp" class="counselors">
+        </div>
+        <h3>Quorum of the Twelve Apostles</h3>
+        <div id="quorum-grid">
+            <div class="spotlight"><img src="images/holland.webp"></div>
+            <div class="spotlight"><img src="images/uchtdorf.webp"></div>
+            <div class="spotlight"><img src="images/bednar.webp"></div>
+            <div class="spotlight"><img src="images/cook.webp"></div>
+            <div class="spotlight"><img src="images/christofferson.webp"></div>
+            <div class="spotlight"><img src="images/anderson.webp"></div>
+            <div class="spotlight"><img src="images/rasband.webp"></div>
+            <div class="spotlight"><img src="images/stevenson.webp"></div>
+            <div class="spotlight"><img src="images/renlund.webp"></div>
+            <div class="spotlight"><img src="images/gong.webp"></div>
+            <div class="spotlight"><img src="images/soares.webp"></div>
+            <div class="spotlight"><img src="images/kearon.webp"></div>
+        </div>
+    </main>
+</body>
+</html>

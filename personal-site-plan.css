@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'AssassinS-ttf';
+  src: url('/fonts/Assassin$.ttf') format('truetype');}
+
+  p.AssassinS-ttf {font-family: 'AssassinS-ttf';}
+
+@font-face {
+  font-family: 'hobbitonbrushhand-ttf';
+  src: url('/fonts/hobbitonbrushhand.ttf') format('truetype');}
+
+  p.hobbitonbrushhand-ttf {font-family: 'hobbitonbrushhand-ttf';}

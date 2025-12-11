@@ -1,0 +1,120 @@
+<!-- https://alveyworld.github.io/wdd130/activities/week10/client-dev-hiring_setup.html -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Previewer</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 200px;
+    background-color: #222;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sidebar button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+
+  .sidebar button:hover,
+  .sidebar button.active {
+    background-color: #444;
+  }
+
+  /* Main preview area */
+  .preview-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+  }
+
+  iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background: white;
+  }
+
+  /* Info table */
+  .info-table {
+    border-top: 1px solid #ccc;
+    background: #fff;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .info-table td {
+    padding: 8px 12px;
+    border-right: 1px solid #eee;
+  }
+
+  .info-table td:last-child {
+    border-right: none;
+  }
+</style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <button class="active" onclick="showPreview('index.html', 'Home Page', '2025-10-20')">Home</button>
+    <button onclick="showPreview('aboutme.html', 'About Us', '2025-09-15')">About</button>
+    <button onclick="showPreview('wwr/index.html', 'Contact Page', '2025-08-02')">Contact</button>
+  </div>
+
+  <div class="preview-container">
+    <iframe id="previewFrame" src="index.html"></iframe>
+
+    <table class="info-table" id="infoTable">
+      <tr>
+        <td><b>Title:</b> Home Page</td>
+        <td><b>Last Updated:</b> 2025-10-20</td>
+      </tr>
+    </table>
+  </div>
+
+<script>
+  function showPreview(url, title, date) {
+    // Update iframe source
+    const frame = document.getElementById('previewFrame');
+    frame.src = url;
+
+    // Update info table
+    const infoTable = document.getElementById('infoTable');
+    infoTable.innerHTML = `
+      <tr>
+        <td><b>Title:</b> ${title}</td>
+        <td><b>Last Updated:</b> ${date}</td>
+      </tr>
+    `;
+
+    // Highlight active button
+    const buttons = document.querySelectorAll('.sidebar button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+header {
+    background: url("../images/hire_a_friend.png");
+    height: 300px;
+    margin: /*Top, Right, Bottom, Left -- "turrble" like Charles Barclay*/ 10px, 12px, 20px, 5px;
+}
+h1 {
+    text-shadow: 3, 8, 2;
+}
+
+section {
+    background: #000;
+    width: 40%;
+    height: 40%;
+    float: left;
+}
+
+img {
+    max-width: 100%;
+}

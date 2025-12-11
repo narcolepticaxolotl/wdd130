@@ -1,0 +1,188 @@
+header img {
+    float: left;
+    width: 178px;
+    border-radius: 100%;
+}
+
+nav {
+    background: greenyellow;
+    clear: both;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* justify-content: space-evenly; This is for if we still had "display: flex;"*/
+    font-family: Arial, Helvetica, sans-serif;
+
+    border: 20px solid #000;
+}
+
+nav a {
+    text-decoration: wavy;
+    padding: 10px;
+}
+
+nav a:hover { /* "hover" is a pseudo class. Something that can change. */
+    background: #f3d;
+    text-shadow: 4px 2px #1363;}
+
+#wrapper {
+    background: #fff url('/images/alex_sample_colors.png') repeat-x;
+    margin: auto;
+    border-radius: 25%;
+    grid-template-rows: 170px 50px 2fr 100px;
+    max-width: 900px;
+}
+
+@media (max-width: 777px) { /* This is called "responsive design." */
+    #wrapper {
+        display:block;
+        min-height: unset;}
+    header {
+        padding: 0;
+        text-align: center;
+    }
+    header h1 {
+        font-size: 2em;
+        float: none;
+        margin: 0;}
+    
+    header img {
+        position: absolute;
+        top: 15px;
+        left: 7px;
+        width: 20%;}
+
+    nav {
+        display: block;
+        height: unset;
+    }
+    nav a {
+        width: 100%;
+        justify-content: center;
+        padding: 0;
+        border: 3px solid #bbbb;
+    }
+    main {display: block;}
+
+    footer {
+        min-height: 200px;
+    }
+}
+
+#ads {
+    width: 200px;
+    border: 3px solid #000;
+    position: fixed;
+    right: -185px;
+    background: #136;
+}
+
+#ads form {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#ads:hover {
+    right: 0;
+    transition: right .5s ease;}
+
+h1 {
+    text-shadow: 3, 8, 2;
+}
+
+body {
+    height: 1000px;
+}
+
+section {
+    background: #000;
+    width: 40%;
+    height: 40%;
+    float: left;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 150px;}
+
+.col_left {
+    height: 80px;
+    background: #0006;
+}
+
+.col_right {
+    height: 10%;
+    color: #ffa;
+}
+
+footer li {
+    list-style-type: none;
+    font-size: .75em;
+    text-decoration: none;
+    min-width: 100px;
+    display: grid;
+    justify-content: center;}
+
+#content {
+    grid-column: 1 / 4;}
+
+
+/* This is long and taken from divtable.com/table-styler */
+table.purpleHorizon {
+  border: 4px solid #792396;
+  background-color: #555555;
+  width: 350px;
+  text-align: center;
+  border-collapse: collapse;}
+
+table.purpleHorizon td, table.purpleHorizon th {
+  border: 1px solid #555555;
+  padding: 5px 2px;}
+
+table.purpleHorizon tbody td {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;}
+
+table.purpleHorizon tr:nth-child(even) {
+  background: #CC3BFC;}
+
+table.purpleHorizon thead {
+  background: #792396;
+  border-bottom: 4px solid #792396;}
+
+table.purpleHorizon thead th {
+  font-size: 19px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: left;
+  border-left: 2px solid #792396;}
+
+table.purpleHorizon thead th:first-child {
+  border-left: none;}
+
+table.purpleHorizon tfoot {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #CE3CFF;
+  background: -moz-linear-gradient(top, #da6dff 0%, #d34fff 66%, #CE3CFF 100%);
+  background: -webkit-linear-gradient(top, #da6dff 0%, #d34fff 66%, #CE3CFF 100%);
+  background: linear-gradient(to bottom, #da6dff 0%, #d34fff 66%, #CE3CFF 100%);
+  border-top: 5px solid #792396;}
+
+table.purpleHorizon tfoot td {
+  font-size: 13px;}
+
+table.purpleHorizon tfoot .links {
+  text-align: right;}
+
+table.purpleHorizon tfoot .links a{
+  display: inline-block;
+  background: #792396;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;}
+/* End table-styler */

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJRL Client Report Page</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- <style>/*body {background-image: url("images/Portal_page_wireframe.png");}*/ img {width:60px;}</style> -->
+    <!-- Downloaded fonts should be "OTF" or "TTF" -->
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="images/Heroes_II_Green_Dragon.webp" alt="Logo image"></a>
+        <div id="cool-images"></div>
+        <nav>
+            <a href="wwr/index.html">WWR</a>
+            <a href="ice.html">ICE</a>
+            <a href="aboutme.html">About Me</a>
+        </nav>
+    </header>
+    <main>
+
+        <h2>Final project report</h2>
+        <hr>
+        <h3>Client Report</h3>
+        <p>stuff about client report</p>
+        <h3>Lead dev Report</h3>
+        <p>stuff about being a lead dev</p>
+        <h3>Junior dev Report</h3>
+        <p>stuff about being a junior dev</p>
+        <h3>Reflections</h3>
+        <p>idk . . . stuff.</p>
+
+        <div id="previews-box">
+            <section id="preview-selection" class="single-column">
+                <button onclick="showPreview('wwr/index.html', 'Whitewater Rafting Homepage', '2025-10-11', '5 stars')" class="active">WWR</button>
+                <button onclick="showPreview('ice.html', 'In-class Exercises Menu', '2025-11-07', 'PG-13')">ICE</button> <!-- See script for ice.html for an improved function that can collect the title from the given page's metadata. -->
+                <button onclick="showPreview('aboutme.html', 'About Me Page', '2025-10-09', '1000 lb')">About Me</button>
+            </section>
+            <section id="preview-window">
+                <!-- Implementing code based on https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp and modifications inspired by chatgpt -->
+                <iframe id="preview-frame" src="wwr/index.html"></iframe>
+                <!-- <img src="images/HoMM2_Prerelease_TownscreenComp.webp" alt="preview image"> -->
+            </section>
+            <table>
+                <tr>
+                    <th>Page title</th>
+                    <th>Date last updated</th>
+                    <th>Rating</th>
+                </tr>
+                <tr id="page_info">
+                    <td>Whitewater Rafting Homepage</td>
+                    <td>2025-10-11</td>
+                    <td>5 stars</td>
+                </tr>
+            </table>
+        </div>
+        <form>
+            <input id="first-input" name="first-input" type="radio">
+            <label for="first-input">Click here!</label><br>
+            <input type="submit" value="And then
+click here!">
+        </form>
+        <aside>
+            <img src="images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+            <img src="images/Dragon_Flying_1.webp" alt="Flying dragon gif">
+        </aside>
+    </main>
+    <footer>
+        &copy; 2025
+    </footer>
+
+<script>
+  // this section was written by chatgpt and tweaked by me.
+  function showPreview(url, title, date, rating) {
+    // Update iframe source
+    const frame = document.getElementById('preview-frame');
+    frame.src = url;
+
+    // Update info table
+    const infoTable = document.getElementById('page_info');
+    infoTable.innerHTML = `
+      <tr>
+        <td>${title}</td>
+        <td>${date}</td>
+        <td>${rating}</td>
+      </tr>
+    `;
+
+    // Highlight active button
+    const buttons = document.querySelectorAll('.sidebar button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

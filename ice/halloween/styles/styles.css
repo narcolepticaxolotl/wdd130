@@ -1,0 +1,71 @@
+/* Add your CSS here to style your halloween page */
+/* @import url(https://fonts.google.com/specimen/Butcherman); */
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: #666;
+}
+
+nav ul {
+    background:#000;
+    padding: 20px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #fa0;
+    list-style-type: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(19, 80px);
+    grid-template-rows: repeat(10, 80px);
+    /* overflow: visible; */
+}
+
+h1 {
+    text-align: center;
+    background: #f80;
+    padding: 20px;
+    margin: 0;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    grid-row: 1 / 2;
+    grid-column: 1 / 21;
+}
+
+img {
+    float: inline;
+    grid-column-start: 9;
+    height: 350px;
+}
+
+main section {
+  position: absolute;
+  width: 160px;
+  transform-origin: center top;
+}
+
+/* Arrange sections in an arc (semi-circle) */
+main section:nth-of-type(1) {
+  left: 20%;
+  top: 480px;
+  transform: rotate(-30deg) translateY(-60px) rotate(30deg);
+}
+
+main section:nth-of-type(2) {
+  left: 50%;
+  top: 520px;
+  transform: translateX(-50%);
+}
+
+main section:nth-of-type(3) {
+  right: 20%;
+  top: 480px;
+  transform: rotate(30deg) translateY(-60px) rotate(-30deg);
+}
+
+/* section {
+    grid-row-start: 7;
+    color: #fc0;
+    grid-area: 4 / 8;
+} */
