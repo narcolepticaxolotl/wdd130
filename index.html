@@ -9,7 +9,7 @@
     <!-- Downloaded fonts should be "OTF" or "TTF" -->
 </head>
 <body>
-    <header id="header">
+    <header>
         <a href="index.html"><img src="images/Heroes_II_Green_Dragon.webp" alt="Logo image"></a>
         <div id="cool-images"></div>
         <nav>
@@ -95,10 +95,10 @@ click here!">
 <!-- vvv COPY THIS SCRIPT TO ALL PAGES THAT YOU WANT TO HAVE THIS SAME STYLE!!! vvv -->
 <script>
     document.addEventListener("DOMContentLoaded", function(){
-        fetch('site-header.html')
+        fetch('sites-header.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById("header").innerHTML = data;
+                document.querySelector("header").innerHTML = data;
             });
     })
 </script>
