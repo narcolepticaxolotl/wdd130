@@ -9,8 +9,8 @@ body {
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(20, 1fr);
     min-height: 100vh;
-    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
-    font-family: 'coolio';
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-family: 'coolio'; */
 }
 
 header {
@@ -35,10 +35,6 @@ nav {
     margin-top: auto;
     margin-bottom: -1.5em;
     background: #5f2;
-    /* padding: 1em; */
-/* } */
-/* nav ul { */
-    /* padding: 0; */
     display: flex;
     /* flex-direction: row; */
     justify-content: space-around;
@@ -63,9 +59,20 @@ main {
     background: #00a;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(9, 1fr) 2em 2em;
+    grid-template-rows: 8vw  6vw 20vw 6vw 20vw 6vw 25vw 6vw 22vw;
     color: #bff;
     text-align: left;
+}
+#reports-box ul {
+    padding: 0 5vw;
+    font-size: 1.2vw;
+}
+#reports-box h3, h2 {
+    padding: 0 2vw;
+    font-size: 2vw;
+}
+#reports-box a {
+    color: #bff;
 }
 
 #previews-box {
